@@ -1,0 +1,30 @@
+{
+    "users": [
+      {
+        "id": 2,
+        "name": "Kasimsha",
+        "email": "kasim@gmail.com",
+        "userName": "khjkhkj",
+        "password": "jkgjkkjghjg",
+        "mobile": "12345"
+      },
+      {
+        "id": 3,
+        "name": "roshan",
+        "email": "hhjkkjnj,",
+        "userName": "hjkhjkhjk",
+        "password": "hjgkhgkjg",
+        "mobile": "6878768768"
+      }
+    ],
+    "hospitals": [
+      {
+        "id": 1,
+        "hospitalName": "ndkn",
+        "address": "jeedigunta",
+        "beds": 12,
+        "icuBeds": 2,
+        "contact": "9898878766"
+      }
+    ]
+  }
