@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserModel } from '../models/user.model';
 import { UserService } from '../services/user.service';
 
@@ -26,6 +26,24 @@ export class UserComponent implements OnInit {
       mobile: [''],
     });
     this.getAllUsers();
+    this.formValue = new FormGroup({
+      name: new FormControl(null, Validators.required),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      mobile: new FormControl(null, [
+        Validators.required,
+        Validators.pattern(
+          '^\\s*(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})(?: *x(\\d+))?\\s*$'
+        ),
+      ]),
+      userName: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(5),
+      ]),
+      password: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(5),
+      ]),
+    });
   }
 
   postUserDetails() {
@@ -38,7 +56,7 @@ export class UserComponent implements OnInit {
     this.userService.createUser(this.userModel).subscribe(
       (res) => {
         console.log(res);
-        alert('Employee Created');
+        alert('user Created');
         this.formValue.reset();
         this.getAllUsers();
       },
@@ -58,5 +76,20 @@ export class UserComponent implements OnInit {
       alert('User Deleted');
       this.getAllUsers();
     });
+  }
+  get name() {
+    return this.formValue.get('name');
+  }
+  get email() {
+    return this.formValue.get('email');
+  }
+  get mobile() {
+    return this.formValue.get('mobile');
+  }
+  get userName() {
+    return this.formValue.get('userName');
+  }
+  get password() {
+    return this.formValue.get('password');
   }
 }

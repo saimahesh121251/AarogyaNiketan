@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HospitalModel } from '../models/hospital.model';
 import { HospitalService } from '../services/hospital.service';
 
@@ -26,6 +26,19 @@ export class HospitalComponent implements OnInit {
       contact: [''],
     });
     this.getAllHospitals();
+    this.formValue = new FormGroup({
+      hospitalName: new FormControl(null, Validators.required),
+      address: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(15),
+      ]),
+      contact: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(10),
+      ]),
+      beds: new FormControl(null, Validators.required),
+      icuBeds: new FormControl(null, Validators.required),
+    });
   }
 
   postHospitalDetails() {
@@ -58,5 +71,20 @@ export class HospitalComponent implements OnInit {
       alert('Hospital Deleted');
       this.getAllHospitals();
     });
+  }
+  get hospitalName() {
+    return this.formValue.get('hospitalName');
+  }
+  get address() {
+    return this.formValue.get('address');
+  }
+  get contact() {
+    return this.formValue.get('address');
+  }
+  get beds() {
+    return this.formValue.get('beds');
+  }
+  get icuBeds() {
+    return this.formValue.get('icuBeds');
   }
 }

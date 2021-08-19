@@ -1,19 +1,78 @@
 {
-  "posts": [
+  "users": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": 2,
+      "name": "saimahesh",
+      "email": "mahehs@gmail.com",
+      "userName": "nfSFSAAS",
+      "password": "***********",
+      "mobile": "123456789."
+    },
+    {
+      "id": 3,
+      "name": "hari",
+      "email": "deshmuk@gmail.com",
+      "userName": "SARI",
+      "password": "*************",
+      "mobile": "9618383641"
+    },
+    {
+      "id": 4,
+      "name": "dffbfd",
+      "email": "dfbahdf@gmail.com",
+      "userName": "SAIMS",
+      "password": "8888888888888888888888888",
+      "mobile": "9618383641"
+    },
+    {
+      "id": 5,
+      "name": "gjhgd",
+      "email": "@gmail.com",
+      "userName": "kgdjfx",
+      "password": "653",
+      "mobile": "554497465+64"
+    },
+    {
+      "id": 6,
+      "name": "aaaaaaaaaaaaaaaaaaaa",
+      "email": "sai@gmail.com",
+      "userName": "sasassdsdw",
+      "password": "*********************8",
+      "mobile": "09505325286"
+    },
+    {
+      "id": 7,
+      "name": "hgf jhgd rst",
+      "email": "sas@gmail.com",
+      "userName": "nbfxgfx",
+      "password": "654643565",
+      "mobile": "9618383646"
     }
   ],
-  "comments": [
+  "hospitals": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "hospitalName": "ndkn",
+      "address": "jeedigunta",
+      "beds": 12,
+      "icuBeds": 2,
+      "contact": "9898878766"
+    },
+    {
+      "id": 4,
+      "hospitalName": "adfbadf",
+      "address": "DFnbadf",
+      "beds": 2543,
+      "icuBeds": 53,
+      "contact": "43434\\5354354"
+    },
+    {
+      "id": 5,
+      "hospitalName": "saimahesh",
+      "address": "vijayawada andhrapradesh",
+      "beds": 11,
+      "icuBeds": 12,
+      "contact": "7661005924"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
